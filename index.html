@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uber Eats</title>
+  <link rel="shortcut icon" href="uber-eats-seeklogo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ubereats: {
+              green: '#06C167',
+              black: '#000000',
+              white: '#FFFFFF',
+              gray: '#F5F5F5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Countdown Timer
+    document.addEventListener("DOMContentLoaded", () => {
+      const countdown = document.getElementById("countdown");
+      const endTime = new Date().getTime() + 60 * 60 * 1000; // 1 hour
+      const updateTimer = () => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+        if (distance <= 0) {
+          countdown.innerText = "Offer expired!";
+          return;
+        }
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdown.innerText = `${hours}h ${minutes}m ${seconds}s left!`;
+      };
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    });
+  </script>
+</head>
+<body class="bg-ubereats-white text-ubereats-black font-sans">
+  <!-- Header -->
+  <header class=" p-4 flex justify-center items-center border-b border-ubereats-green">
+    <img src="uber-eats-seeklogo.png" alt="Uber Eats Logo" class="w-40 h-16 object-contain" />
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-5 pb-5 flex flex-col justify-center items-center text-center px-6 bg-ubereats-white text-ubereats-black">
+    <h1 class="text-4xl md:text-5xl font-bold mt-5 mb-4 text-ubereats-green">
+      Earn Money by Reviewing Uber Eats Orders
+    </h1>
+    <p class="text-lg mb-2 max-w-xl font-semibold text-ubereats-black">
+      Get paid up to $500 by completing quick delivery reviews on Uber Eats.
+    </p>
+    <p id="countdown" class="text-ubereats-green font-bold text-lg mb-6">Loading...</p>
+    <a id="review-link" href="https://uplevelrewarded.com/aff_c?offer_id=633&aff_id=158919"
+      class="bg-ubereats-green text-ubereats-black px-6 py-3 rounded-full mb-5 font-semibold hover:bg-ubereats-black hover:text-ubereats-green transition">
+      Apply Now
+    </a>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="py-20 px-6 bg-ubereats-gray text-center">
+    <h2 class="text-3xl font-semibold mb-8 text-ubereats-black">How It Works</h2>
+    <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 bg-ubereats-white rounded shadow text-ubereats-black">
+        <h3 class="text-xl font-bold mb-2 text-ubereats-green">Step 1</h3>
+        <p>Click "Apply Now" to get started.</p>
+      </div>
+      <div class="p-6 bg-ubereats-white rounded shadow text-ubereats-black">
+        <h3 class="text-xl font-bold mb-2 text-ubereats-green">Step 2</h3>
+        <p>Enter your basic information.</p>
+      </div>
+      <div class="p-6 bg-ubereats-white rounded shadow text-ubereats-black">
+        <h3 class="text-xl font-bold mb-2 text-ubereats-green">Step 3</h3>
+        <p>Complete at least 3–5 recommended deals.</p>
+      </div>
+      <div class="p-6 bg-ubereats-white rounded shadow text-ubereats-black">
+        <h3 class="text-xl font-bold mb-2 text-ubereats-green">Step 4</h3>
+        <p>Receive your reward.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-10 px-6 bg-ubereats-white text-center">
+    <h2 class="text-3xl font-semibold mb-10 text-ubereats-green">What Others Are Saying</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="p-6 bg-ubereats-gray rounded shadow text-ubereats-black">
+        <p class="italic">“I reviewed two orders and got paid within a few hours — super smooth!”</p>
+        <p class="mt-4 font-bold">— Amelia, Florida</p>
+      </div>
+      <div class="p-6 bg-ubereats-gray rounded shadow text-ubereats-black">
+        <p class="italic">“It’s fast, simple, and the rewards are real. I love it!”</p>
+        <p class="mt-4 font-bold">— Harper, Ohio</p>
+      </div>
+      <div class="p-6 bg-ubereats-gray rounded shadow text-ubereats-black">
+        <p class="italic">“I didn’t expect to earn that quickly. Highly recommended!”</p>
+        <p class="mt-4 font-bold">— Layla, Brisbane</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-10 bg-ubereats-white text-center">
+    <h2 class="text-2xl font-semibold mb-4 text-ubereats-black">Need Help?</h2>
+    <p class="mb-6 text-gray-700">Contact our team for questions about the review process.</p>
+    <a href="https://uplevelrewarded.com/aff_c?offer_id=633&aff_id=158919"
+      class="inline-block bg-ubereats-green text-ubereats-black px-6 py-3 rounded hover:bg-ubereats-black hover:text-ubereats-green transition font-medium">
+      Contact Support
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center pt-5 p-6 bg-ubereats-black border-t border-ubereats-green">
+    <p class="text-sm text-ubereats-white">© 2025 Uber Eats</p>
+  </footer>
+</body>
+</html>
